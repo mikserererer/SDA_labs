@@ -55,3 +55,60 @@ $$S = \sum_{i=0}^{n} (-1)^i x^i$$
 $$S_{\text{точн}} = \frac{1}{1 + x} = \frac{1}{1 + \frac{1}{3}} = \frac{3}{4} = 0.75$$
 
 ---
+
+## 3. Текст обох програм
+
+### Програма 1
+```c
+#include <stdio.h>
+
+int main(void) {
+    int n;
+    printf("Enter n (n>0): ");
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        return 1;
+    }
+
+    const double x = 1.0 / 3.0;
+    double sum = 0.0;
+
+    for (int i = 0; i <= n; ++i) {
+        double power_x = 1.0;
+        for (int j = 0; j < i; ++j) {
+            power_x *= x;
+        }
+
+        double sign = (i % 2 == 0) ? 1.0 : -1.0;
+        sum += sign * power_x;
+    }
+
+    printf("%.7lf\n", sum);
+    return 0;
+}
+```
+
+### Програма 2
+#include <stdio.h>
+
+```c
+int main(void) {
+    int n;
+    printf("Enter n (n>0): ");
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        return 1;
+    }
+
+    const double x = 1.0 / 3.0;
+    const double factor = -x;
+    double term = 1.0;
+    double sum = 0.0;
+
+    for (int i = 0; i <= n; ++i) {
+        sum += term;
+        term *= factor;
+    }
+
+    printf("%.7lf\n", sum);
+    return 0;
+}
+```
