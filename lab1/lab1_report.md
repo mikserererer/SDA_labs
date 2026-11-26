@@ -151,3 +151,14 @@ int main(void) {
     return 0;
 }
 ```
+
+---
+
+### 5. Результати тестування програм:
+
+![Тест 1](images_lab1/image1.png)
+![Тест 2](images_lab1/image2.png)
+![Тест 3](images_lab1/image3.png)
+![Тест 4](images_lab1/image4.png)
+![Тест 5](images_lab1/image5.png)
+![Тест 6](images_lab1/image6.png)
