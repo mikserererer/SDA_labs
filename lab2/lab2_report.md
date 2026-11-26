@@ -182,3 +182,11 @@ $$T = K_C t_1 + K_A t_2 + K_L t_3 + K_{as} t_4$$
 
 ## 7. Графік за таблицею (залежність кількості операцій від n)
 ![Графік залежності](images_lab2/desmos-graph.png)
+
+---
+
+## 8. Результати перевірки  правильності обчислень на калькуляторі
+![Тест 1](images_lab2/image5.png)
+![Тест 2](images_lab2/image6.png)
+![Тест 3](images_lab2/image7.png)
+![Тест 4](images_lab2/image8.png)
