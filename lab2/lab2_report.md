@@ -88,9 +88,8 @@ int main(void) {
 ```
 
 ### Програма 2
-#include <stdio.h>
-
 ```c
+#include <stdio.h>
 int main(void) {
     int n;
     printf("Enter n (n>0): ");
