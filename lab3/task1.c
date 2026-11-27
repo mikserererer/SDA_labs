@@ -30,11 +30,16 @@ int is_full(void) {
 }
 
 int enqueue(Call c) {
-    if (is_full()) return 0;
-    data[tail] = c;
-    tail = (tail + 1) % QUEUE_CAPACITY;
-    count++;
-    return 1;
+    if (is_full()) {
+        printf("Queue overflow: cannot enqueue call #%d (max capacity %d)\n",
+               c.id, QUEUE_CAPACITY);
+        return 0;
+    } else {
+        data[tail] = c;
+        tail = (tail + 1) % QUEUE_CAPACITY;
+        count++;
+        return 1;
+    }
 }
 
 int dequeue(Call *out) {
