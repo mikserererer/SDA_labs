@@ -39,13 +39,17 @@ int enqueue(Call c) {
 }
 
 int dequeue(Call *out) {
-    if (is_empty()) return 0;
-    Node *n = front;
-    *out = n->data;
-    front = n->next;
-    if (front == NULL) rear = NULL;
-    free(n);
-    return 1;
+    if (is_empty()) {
+        printf("Queue is empty: cannot dequeue\n");
+        return 0;
+    } else {
+        Node *n = front;
+        *out = n->data;
+        front = n->next;
+        if (front == NULL) rear = NULL;
+        free(n);
+        return 1;
+    }
 }
 
 int peek_front(Call *out) {
@@ -79,6 +83,7 @@ int main(void) {
     Call current;
 
     queue_init();
+    dequeue(&current);
 
     while (processed < CALLS_COUNT) {
         if (serving && clock >= busy_until) {
