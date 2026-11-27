@@ -38,11 +38,15 @@ int enqueue(Call c) {
 }
 
 int dequeue(Call *out) {
-    if (is_empty()) return 0;
-    *out = data[head];
-    head = (head + 1) % QUEUE_CAPACITY;
-    count--;
-    return 1;
+    if (is_empty()) {
+        printf("Queue is empty: dequeue skipped\n");
+        return 0;
+    } else {
+        *out = data[head];
+        head = (head + 1) % QUEUE_CAPACITY;
+        count--;
+        return 1;
+    }
 }
 
 int peek_front(Call *out) {
@@ -71,6 +75,7 @@ int main(void) {
     Call current;
 
     queue_init();
+    dequeue(&current);
 
     while (processed < CALLS_COUNT) {
         if (serving && clock >= busy_until) {
